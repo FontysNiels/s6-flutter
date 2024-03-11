@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'Namer Apps',
+        title: 'Cup-A-Soup App',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color.fromARGB(255, 69, 121, 55)),
+          // colorScheme: ColorScheme.fromSeed(
+          //     seedColor: const Color.fromARGB(255, 69, 121, 55)),
         ),
         home: MyHomePage(),
       ),
@@ -69,40 +69,30 @@ class GeneratorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
+    context.watch<MyAppState>();
     return Column(
       children: [
-        CardExample(),
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Padding(
+            padding: EdgeInsets.only(left: 10.0, right: 10.0),
+            child: TakenPictureCard(),
+          ),
+        ),
       ],
     );
   }
 }
 
-class CardExample extends StatelessWidget {
-  const CardExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: EdgeInsets.only(left: 10.0, right: 10.0),
-        child: takenPictureCard(),
-      ),
-    );
-  }
-}
-
-// ignore: camel_case_types
-class takenPictureCard extends StatelessWidget {
-  takenPictureCard({
+class TakenPictureCard extends StatelessWidget {
+  const TakenPictureCard({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 700,
+      height: 900,
       child: Card(
         color: Color.fromARGB(255, 53, 94, 42),
         child: Column(

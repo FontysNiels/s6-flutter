@@ -10,11 +10,8 @@ class CardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0),
-      child: Container(
-        height: 400,
-        color: Colors.white,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Image.asset('assets/template.png')
     );
   }
 }
