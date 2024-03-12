@@ -46,17 +46,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
-        body: Row(
-          children: [
-            Expanded(
-              child: Container(
-                // color: Theme.of(context).colorScheme.primary,
-                // color: Theme.of(context).colorScheme.primaryContainer,
-                color: const Color.fromARGB(255, 69, 121, 55),
-                child: GeneratorPage(),
-              ),
+        body: SafeArea(
+          // Ensures content stays within safe area (e.g., avoids notches)
+          child: SingleChildScrollView(
+            // Enables vertical scrolling
+            child: Column(
+              children: [
+                Container(
+                  color: const Color.fromARGB(255, 69, 121, 55),
+                  child:
+                      GeneratorPage(), // Replace with your scrollable content
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       );
     });
